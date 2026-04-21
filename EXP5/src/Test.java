@@ -6,8 +6,7 @@ import java.sql.Statement;
 import java.util.Scanner;
 
 public class Test {
-
-    // METHOD TO GET ORACLE CONNECTION
+ 
     public static Connection getConnection() {
         Connection con = null;
         try {
@@ -24,8 +23,7 @@ public class Test {
         }
         return con;
     }
-
-    // INSERT
+ 
     public static void insertStudent(int id, String name, int age) {
         try (Connection con = getConnection()) {
             String sql = "INSERT INTO student VALUES (?,?,?)";
@@ -42,8 +40,7 @@ public class Test {
             e.printStackTrace();
         }
     }
-
-    // READ
+ 
     public static void viewStudents() {
         try (Connection con = getConnection()) {
             Statement st = con.createStatement();
@@ -62,7 +59,7 @@ public class Test {
         }
     }
 
-    // UPDATE
+   
     public static void updateStudent(int id, String name) {
         try (Connection con = getConnection()) {
             String sql = "UPDATE student SET name=? WHERE id=?";
@@ -79,7 +76,7 @@ public class Test {
         }
     }
 
-    // DELETE
+   
     public static void deleteStudent(int id) {
         try (Connection con = getConnection()) {
             String sql = "DELETE FROM student WHERE id=?";
@@ -93,8 +90,7 @@ public class Test {
             e.printStackTrace();
         }
     }
-
-    // 🔥 MAIN METHOD (THIS WAS MISSING)
+ 
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
